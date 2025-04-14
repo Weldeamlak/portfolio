@@ -1,0 +1,281 @@
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+   /* Header */
+   header {
+     padding: 15px;
+     flex-direction: column;
+     align-items: flex-start;
+     position: relative;
+     z-index: 100;
+   }
+   body.nav-open .home,
+   body.nav-open .projects-section {
+     margin-top: 160px;
+     transition: margin-top 0.3s ease;
+   }
+ 
+   .logo {
+     font-size: 20px;
+     opacity: 1;
+     animation: none;
+   }
+ 
+   .menu-toggle {
+     display: block;
+     font-size: 2rem;
+     margin-left: 0;
+     align-self: flex-start;
+     cursor: pointer;
+   }
+
+    .navbar {
+      display: none;
+      position: absolute;
+      top: 90px;
+      left: 0;
+      background-color: #3f6ecd;
+      width: 100%;
+      text-align: start;
+      padding: 20px;
+      border-radius: 10px;
+      flex-direction: column;
+      z-index: 99;
+    } 
+    .navbar a{
+      color: red;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-left: 0;
+    }
+ 
+   .navbar.active {
+     display: flex;
+   }
+ 
+   .home {
+     
+     transition: margin-top 0.3s ease;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     padding: 50px 5%;
+     height: auto;
+   }
+ 
+   .home-content h1 {
+     font-size: clamp(28px, 6vw, 35px);
+   }
+ 
+   .home-content h3 {
+     font-size: clamp(20px, 5vw, 24px);
+   }
+ 
+   .home-content p {
+     font-size: 16px;
+   }
+ 
+   .home-sci a {
+     width: 35px;
+     height: 35px;
+     font-size: 18px;
+   }
+   .about {
+      margin: 10px auto;
+      padding: 20px;
+   }
+   .about-me img{
+      display: none;
+   }
+   /* Skill Section */
+.skill-wrapper {
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+ }
+ 
+ .container {
+   padding: 15px;
+   width: 100%;
+ }
+ 
+ .heading {
+   font-size: 20px;
+   margin-bottom: 20px;
+ }
+ 
+ .bar {
+   font-size: 14px;
+ }
+ 
+ .radial-bar {
+   width: 70px;
+   height: 70px;
+   margin: 10px;
+ }
+ 
+ .radial-bar svg {
+   width: 70px;
+   height: 70px;
+ }
+ 
+ .radial-bar .text {
+   font-size: 14px;
+ }
+ 
+   /* Project Card */
+   .project-card {
+     padding: 15px;
+   }
+ 
+   .project-card img {
+     height: 160px;
+   }
+ }
+ 
+ 
+ /* Extra Small Devices (phones, 480px and below) */
+ @media screen and (max-width: 480px) {
+   header {
+     padding: 10px;
+   }
+ 
+   .logo {
+     font-size: 18px;
+   }
+ 
+   .navbar {
+     display: none;
+     position: absolute;
+     top: 90px;
+     left: 0;
+     background-color: #3f6ecd;
+     width: 100%;
+     text-align: start;
+     padding: 20px;
+     border-radius: 10px;
+     flex-direction: column;
+     z-index: 99;
+   } 
+   .navbar a{
+      color: rebeccapurple;
+   }
+   body.nav-open .home {
+     margin-top: 200px;
+     transition: margin-top 0.3s ease;
+   }
+ 
+   .home-content h1 {
+     font-size: clamp(24px, 7vw, 28px);
+   }
+ 
+   .home-content h3 {
+     font-size: clamp(18px, 6vw, 20px);
+   }
+ 
+   .home-content p {
+     font-size: 14px;
+   }
+ 
+   .home-sci a {
+     width: 30px;
+     height: 30px;
+     font-size: 16px;
+   }
+   
+      
+      .skill-wrapper {
+        padding: 0 20px;  
+        gap: 20px;        
+      }
+    
+    
+     
+      .heading {
+        font-size: 24px; 
+      }
+    
+      .progress-line {
+        height: 4px; /
+      }
+    
+      
+      .technical-bar .bar .info span {
+        font-size: 18px; /
+      }
+    
+      .progress-line span::after {
+        font-size: 10px; 
+      }
+      
+      .radial-bars .radial-bar {
+        width: 40%;
+        height: 140px;
+      }
+    
+      .radial-bars .radial-bar svg {
+        width: 100%;
+        height: 100%;
+      }
+    
+      /* Adjust percentage inside the radial bars */
+      .radial-bar .percentage {
+         position: absolute;
+         top: 53%;
+         left: 60%;
+        font-size: 14px;
+      }
+    
+      .radial-bar .text {
+        font-size: 16px;
+      }
+    
+      
+      .radial-bars .radial-bar .progress-bar {
+        stroke-width: 8px;
+      }
+    
+      
+      @keyframes animate-bar {
+        100% {
+          stroke-dashoffset: -1;
+        }
+      }
+    
+      
+      .path {
+        stroke-width: 8px;
+      }
+    
+      .path-1, .path-2, .path-3, .path-4 {
+        animation-duration: 1.5s; 
+      }
+    
+      
+      .progress-line.html span {
+        width: 90%; 
+      }
+      .progress-line.css3 span {
+        width: 80%;
+      }
+      .progress-line.js span {
+        width: 70%;
+      }
+      .progress-line.react span {
+        width: 45%;
+      }
+      .progress-line.sass span {
+        width: 5%;
+      }
+    
+      
+      .technical-bar .bar .info {
+        margin-bottom: 10px;
+      }
+    
+    
+   .project-card img {
+     height: 140px;
+   }
+ }
+ 

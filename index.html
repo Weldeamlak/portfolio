@@ -6,6 +6,7 @@
    <title>Portfolio</title>
    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style2.css">
    <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -13,19 +14,18 @@
 
 </head>
 <body>
-  
    <header class="header">
-      <a href="#" class="logo">portfolio</a>
+      <a href="#" class="logo">Portfolio</a>
       <div class="menu-toggle" id="menu-toggle">
         <i class="fas fa-bars"></i> <!-- Font Awesome icon -->
       </div>
     
       <nav class="navbar" id="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#latest-projects">Portfolio</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" style="--i:1">Home</a>
+        <a href="#about" style="--i:2">About</a>
+        <a href="#skills" style="--i:3">Skills</a>
+        <a href="#latest-projects" style="--i:4">Portfolio</a>
+        <a href="#contact" style="--i:5">Contact</a>
       </nav>
     </header>
     
@@ -43,12 +43,17 @@
          
             
          </div>
+
+        
          <a href="#" class="btn-box">More About Me</a>
+      </div>
+      <div class="me">
+         <img src="picture.png"  alt="me">
       </div>
    </section>
    <section class="about" id="about">
-      <div class="about-img">
-         <img src="" alt="me">
+      <div class="about-me">
+         <img src="picture.png" alt="me">
       </div>
       <div class="about-text">
          <h2>About<span>Me</span></h2>
@@ -137,61 +142,39 @@
    </div>
 </div>
  </section>
- <section id="latest-projects" class="projects-section">
+<section id="latest-projects" class="projects-section">
    <h2>Latest Projects</h2>
  
-   <div class="projects-container">
-     <div class="project-card">
-       <img src="images/project1.jpg" alt="Project 1">
-       <h3>Project Title 1</h3>
-       <p>A short description of what this project is about.</p>
-       <a href="#" class="btn" target="_blank">View Project</a>
-     </div>
- 
-     <div class="project-card">
-       <img src="images/project2.jpg" alt="Project 2">
-       <h3>Project Title 2</h3>
-       <p>A short description of another recent project.</p>
-       <a href="#" class="btn" target="_blank">View Project</a>
-     </div>
- 
-     <!-- Add more project cards as needed -->
-      
+   <div class="projects-container" id="projects-container">
+     <!-- Projects will be rendered here by JavaScript -->
    </div>
-   <a href="#portfolio" class="btn" style="margin-top: 20px;">See All Projects </a>
-
+ 
+   <a href="#" class="btn" id="toggle-projects"  style="text-align: end;">View More</a>
  </section>
+ 
  <section id="contact" class="contact-section">
    <h2>Contact Me</h2>
    
-   <p>If you’d like to work together or just say hi, feel free to reach out!</p>
+   <p>If you'd like to work together or just say hi, feel free to reach out!</p>
  
    <div class="contact-info">
-     <p><strong>Email:</strong> <a href="weldes:weldeamlak12@gmail.com">weldeamlak12@gmail.com</a></p>
+     <p><strong>Email:</strong><a href="mailto:weldeamlak12@gmail.com">weldeamlak12@gmail.com</a>
      <p><strong>Phone:</strong> +251 92 486 3894</p>
    </div>
  
-   <form class="contact-form" action="mailto:your@email.com" method="post" enctype="text/plain">
-     <input type="text" name="name" placeholder="Your Name" required>
-     <input type="email" name="email" placeholder="Your Email" required>
-     <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-     <button type="submit">Send Message</button>
-   </form>
+   <form id="contact-form" action="mailto:weldeamlak12@gmail.com" method="post" enctype="text/plain">
+    <input id="name" type="text" name="name" placeholder="Your Name" required>
+    <input id="email" type="email" name="email" placeholder="Your Email" required>
+    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+    <div id="formStatus"></div> <!-- Moved status display here -->
+  </form>
  </section>
  <a href="#home" class="back-to-top" title="Back to Top">
    &#8679;
  </a>
  
    <script src="main.js">
-      
-  const menuToggle = document.getElementById('menu-toggle');
-  const navbar = document.getElementById('navbar');
-
-  menuToggle.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-  });
-
-
    </script>
 </body>
 </html>

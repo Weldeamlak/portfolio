@@ -47,56 +47,14 @@ animation: slideRight 1s forwards;
    margin-left: 10px;
    transition: background-color 0.3s ease;
  }
- 
  .menu-toggle:hover {
    background-color: #555;
  }
- 
- .header {
-   /* display: flex;
-   align-items: center;
-   justify-content: space-between;
-   position: relative; */
+ .menu-toggle .fas {
+  font-size: 28px;
+  color: #fff;
+}
 
-   position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
- }
- 
- /* Mobile styles */
- @media (max-width: 768px) {
-   .menu-toggle {
-     display: inline-block;
-   }
- .header {
-   padding: 0;
-   margin: 0;
- }
-   .navbar {
-     display: none;
-     flex-direction: column;
-     background-color: #111;
-     width: 100%;
-     position: absolute;
-     top: 60px;
-     left: 0;
-     z-index: 100;
-   }
- 
-   .navbar.active {
-     display: flex;
-   }
- 
-   .navbar a {
-     padding: 15px;
-     color: white;
-     border-top: 1px solid #333;
-   }
- }
- 
- 
 .navbar a {
    display: inline-block;
    font-size: 25px;
@@ -114,6 +72,8 @@ animation: slideRight 1s forwards;
 }
 .home {
    position: relative;
+   display: flex;
+  
    width: 100%;
    height: 100vh;
    justify-content: space-between;
@@ -194,6 +154,26 @@ animation: slideRight 1s forwards;
                 0 0 10px cyan,
                 0 0 200px cyan;
 }
+.me {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.me img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 20px #0ef, 0 0 40px #0ef, 0 0 60px #0ef;
+  transition: transform 0.3s ease;
+}
+
+.me img:hover {
+  transform: scale(1.05);
+}
+
 
 .about {
    display: grid;
@@ -201,12 +181,13 @@ animation: slideRight 1s forwards;
    align-items: center;
    gap: 1.5rem;
 }
-.about-img img {
+.about-me img {
    padding-bottom: 20%;
-   max-width: 650px;
+   margin-left: 50px;
+   max-width: 450px;
    height: auto;
    width: 100%;
-   border-radius: 10px;
+   border-radius: 30px;
 }
 .about-text h2 {
    font-size: 60px;
@@ -346,7 +327,7 @@ animation: slideRight 1s forwards;
  .progress-line span::after {
    content: attr(data-label);
    position: absolute;
-   top: -25px;
+   top: 25px;
    left: 50%;
    transform: translateX(-50%);
    background-color: #000;
@@ -521,10 +502,6 @@ animation: slideRight 1s forwards;
    width: 5%;
 }
 
-
-
-
-
 @keyframes slideRight {
    0% {
      transform: translateX(-100px);
@@ -534,8 +511,6 @@ animation: slideRight 1s forwards;
       transform: translateX(0);
       opacity: 1; 
     }
-    
-    
 }
 @keyframes slideLeft {
    0% {
@@ -569,98 +544,54 @@ animation: slideRight 1s forwards;
     }
     
 }
-
-@media (max-width: 768px) {
-   header {
-     flex-direction: column;
-     align-items: center;
-   }
- 
-   .navbar {
-     flex-direction: column;
-     text-align: center;
-     width: 100%;
-   }
- 
-   .navbar a {
-     padding: 10px;
-     display: block;
-   }
- 
-   .home, .about, .services, .skills, .contact {
-     padding: 30px 15px;
-     text-align: center;
-   }
- 
-   .skills-container {
-     flex-direction: column;
-     align-items: center;
-   }
- 
-   .radial-bars {
-     flex-wrap: wrap;
-     justify-content: center;
-   }
- }
- 
- .projects-section {
-   padding: 60px 20px;
-   text-align: center;
- }
- 
- .projects-section h2 {
-   font-size: 2rem;
-   margin-bottom: 30px;
- }
- 
  .projects-container {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-   gap: 20px;
- }
- 
- .project-card {
-   background-color: white;
-   border-radius: 12px;
-   padding: 20px;
-   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-   transition: transform 0.3s;
- }
- 
- .project-card:hover {
-   transform: translateY(-5px);
- }
- 
- .project-card img {
-   width: 100%;
-   border-radius: 8px;
-   height: 180px;
-   object-fit: cover;
-   margin-bottom: 15px;
- }
- 
- .project-card h3 {
-   margin-bottom: 10px;
- }
- 
- .project-card p {
-   font-size: 0.9rem;
-   margin-bottom: 15px;
- }
- 
- .project-card .btn {
-   text-decoration: none;
-   color: white;
-   background-color: #333;
-   padding: 10px 15px;
-   border-radius: 6px;
-   display: inline-block;
-   transition: background-color 0.3s ease;
- }
- 
- .project-card .btn:hover {
-   background-color: #555;
- }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.project-card {
+  background-color: #111;
+  border: 1px solid #0ff;
+  border-radius: 12px;
+  height: 100%;
+  padding: 1rem;
+  box-shadow: 0 0 10px #0ff;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: auto;
+}
+
+.project-card h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.project-card a {
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
  .contact-section {
    padding: 60px 20px;
    text-align: center;
@@ -673,7 +604,8 @@ animation: slideRight 1s forwards;
  
  .contact-info p {
    font-size: 1rem;
-   margin: 5px 0;
+   margin: 25px;
+   padding: 20px;
  }
  
  .contact-info a {
@@ -681,7 +613,7 @@ animation: slideRight 1s forwards;
    text-decoration: none;
  }
  
- .contact-form {
+ #contact-form {
    max-width: 600px;
    margin: 30px auto 0;
    display: flex;
@@ -689,8 +621,8 @@ animation: slideRight 1s forwards;
    gap: 15px;
  }
  
- .contact-form input,
- .contact-form textarea {
+ #contact-form input,
+ #contact-form textarea {
    padding: 12px;
    border: 1px solid #ccc;
    border-radius: 6px;
@@ -699,13 +631,14 @@ animation: slideRight 1s forwards;
    transition: border-color 0.3s ease;
    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
  }
- .contact-form input:focus,
-.contact-form textarea:focus {
+ #contact-form input:focus,
+#contact-form textarea:focus {
   box-shadow: 0 0 10px #0ff, 0 0 20px #0ff; 
   background: #222;
+  color: red;
 }
 
- .contact-form button {
+ #contact-form button {
    background-color: rgb(207, 240, 243);
    color: #fff;
    padding: 12px;
@@ -716,7 +649,7 @@ animation: slideRight 1s forwards;
    transition: background-color 0.3s;
  }
  
- .contact-form button:hover {
+ #contact-form button:hover {
    background-color: #0ef;
  }
  
@@ -741,8 +674,23 @@ animation: slideRight 1s forwards;
    background-color: #0ef;
  }
  .btn {
-   margin-top: 20px;
- }
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: #333;
+  font-family: cursive;
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: #555;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: #0ff;
+}
 
 
 
